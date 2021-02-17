@@ -1,0 +1,8 @@
+<%= form_with url: '../login' do |form| %>
+  
+  <%= form.label 'Username' %>
+  <%= form.text_field 'Username',required:true %>
+  <div class="actions">
+    <%= form.submit 'Login' %>
+  </div>
+<% end %>
