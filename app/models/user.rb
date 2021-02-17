@@ -4,4 +4,6 @@ class User < ApplicationRecord
     validates :username, length: { in: 4..10 }
 
     validates :full_name, length: { maximum: 35 }
+
+    has_many :thoughties, inverse_of: :author,foreign_key:'author_id'
 end

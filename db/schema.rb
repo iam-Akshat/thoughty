@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_16_155414) do
+ActiveRecord::Schema.define(version: 2021_02_17_101736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "thoughties", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_thoughties_on_author_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -22,4 +30,5 @@ ActiveRecord::Schema.define(version: 2021_02_16_155414) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "thoughties", "users", column: "author_id"
 end
