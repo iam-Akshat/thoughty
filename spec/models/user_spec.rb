@@ -12,5 +12,11 @@ RSpec.describe User, type: :model do
 
   describe "associations" do
     it { should have_many(:thoughties) }
+
+    it { should have_many(:followers_following) }
+    it { should have_many(:followers) }
+    
+    it { should have_many(:followeds_following) }
+    it { should have_many(:followeds) }
   end
 end
