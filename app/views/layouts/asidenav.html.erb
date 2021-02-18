@@ -13,16 +13,19 @@
             <span class="font-weight-bold">Following</span>
         </div>
     </div>
-    <nav class="w-100">
+    <nav class="w-100 mt-4">
         <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link active bg-danger" href="#">Active</a>
+            <li class="nav-item d-flex w-25 justify-content-between align-items-center">
+                <img class="nav-icon" src="https://img.icons8.com/android/24/ffffff/home.png"/>
+                <%=  link_to 'Home', '#',class: 'nav-link text-white' %>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Link</a>
+            <li class="nav-item d-flex w-25 justify-content-between align-items-center">
+                <img class="nav-icon" src="https://img.icons8.com/material/24/ffffff/user-male-circle--v1.png"/>
+                <%=  link_to 'Profile', '#',class: 'nav-link text-white' %>
             </li>
-                <li class="nav-item">
-                <a class="nav-link text-white" href="#">Link</a>
+                <li class="nav-item d-flex w-25 justify-content-between align-items-center">
+                <img class="nav-icon" src="https://img.icons8.com/material/24/ffffff/statistics--v1.png"/>
+                <%=  link_to 'Statistics', '#',class: 'nav-link text-white' %>
             </li>
         </ul>
     <nav>
