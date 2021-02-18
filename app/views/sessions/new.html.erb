@@ -1,5 +1,7 @@
 <h1>Sign In</h1>
+<div class="sign-in-up-form">
+    <%= render 'form', session: @session %>
+<div>
 
-<%= render 'form', session: @session %>
 
-<%= link_to 'Sign up', sign_up_path %>
+new user? <%= link_to 'Sign up', sign_up_path %>

@@ -10,12 +10,18 @@
       </ul>
     </div>
   <% end %>
-  <%= form.label :username %>
-  <%= form.text_field :username ,required: true, minlength: 4 ,maxlength: 10 %>
+  <div class="form-group">
+    <%= form.label :username %>
+    <%= form.text_field :username ,required: true, minlength: 4 ,maxlength: 10, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name, required: true ,maxlength: 35, class: 'form-control' %>
+  </div>
+
   <br>
-  <%= form.label :full_name %>
-  <%= form.text_field :full_name, required: true ,maxlength: 10 %>
+
   <div class="actions">
-    <%= form.submit 'Sign up' %>
+    <%= form.submit 'Sign up',class: 'btn btn-primary' %>
   </div>
 <% end %>
