@@ -11,9 +11,16 @@
   </head>
 
   <body>
-  
+  <% if signed_in? %>
+  <%= render template: 'layouts/asidenav' %>
+  <% end %>
+  <main class="container-fluid" <%= signed_in? && 'style="margin-left:20%"' %> >
+    <%=render template: 'layouts/topnav' %>
     <%== flash_shower %>
     <%= yield %>
+  </main>
+    
+    
   
   </body>
 </html>
