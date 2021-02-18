@@ -8,12 +8,12 @@ module ApplicationHelper
   end
 
   def signed_in?
-    !params[:user_id].nil?
+    !session[:user_id].nil?
   end
 
   def current_user
     if signed_in?
-      User.find(params[:user_id])
+      User.find(session[:user_id])
     else
       'Log in'
     end
