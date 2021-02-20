@@ -26,3 +26,8 @@
  .nav-icon{
      height: 24px;
  }
+ main.container-fluid{
+     padding-left: 0;
+     max-width: 80% !important;
+     padding-right: 0;
+ }

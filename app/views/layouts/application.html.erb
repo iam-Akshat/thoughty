@@ -14,10 +14,16 @@
   <% if signed_in? %>
   <%= render template: 'layouts/asidenav' %>
   <% end %>
-  <main class="container-fluid" <%= signed_in? && 'style="margin-left:20%"' %> >
+  <main class="container-fluid" <%= signed_in? && 'style=margin-left:20%' %> >
     <%=render template: 'layouts/topnav' %>
     <%== flash_shower %>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="main-content container-xl mx-auto">
+        <%= yield %>
+      </div>
+      
+    </div>
+    
   </main>
     
     
