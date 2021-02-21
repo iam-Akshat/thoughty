@@ -1,0 +1,12 @@
+<div class="thought w-100 clearfix mt-2 p-1">
+    <div class="float-left mr-2">
+        <%= image_tag 'https://via.placeholder.com/50/000000/FFFFFF/?text=User' %>
+    </div>
+    <div>
+    <div class="d-flex w-80 justify-content-between">
+        <h6><%= thought.author.username %></h6>
+        <p><%= thought.created_at.to_formatted_s(:short)  %></p>
+    </div>
+        <p class="text-secondary"><%= thought.content %></p>
+    </div>
+</div>

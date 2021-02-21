@@ -31,3 +31,7 @@
      max-width: 80% !important;
      padding-right: 0;
  }
+ .holder.container-fluid{
+    padding-right: 0;
+    padding-left: 0;
+ }
