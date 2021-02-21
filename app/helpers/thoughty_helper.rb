@@ -1,0 +1,2 @@
+module ThoughtyHelper
+end

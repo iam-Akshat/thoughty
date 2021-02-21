@@ -1,0 +1,8 @@
+<%= form_with(model: @user.thoughties.new) do |f| %>
+    <%= hidden_field_tag 'thoughty[author_id]',@user.id %>
+    <div class="form-group">
+        <%= f.label :content,'Share your thoughts...' %>
+        <%= f.text_field :content, required: true, class: 'form-control' %>
+    </div>
+    <%= f.submit 'Hear me',class: 'btn btn-primary' %>
+<% end %>
