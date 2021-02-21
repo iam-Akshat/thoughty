@@ -1,0 +1,32 @@
+<aside class="p-3 bg-secondary asidenav">
+    <div class="d-flex w-75 justify-content-between align-items-center">
+        <%= image_tag 'https://via.placeholder.com/75/000000/FFFFFF/?text=Thoughty'%>
+        <p class="font-weight-bold text-white"><%= current_user.full_name  %></p>
+    </div>
+    <div class="mini-stats d-flex w-100 justify-content-between mt-4 ">
+        <div class="text-white d-flex flex-column align-items-center ">
+            <span><%= current_user.followers.size %></span>
+            <span class="font-weight-bold">Followers</span>
+        </div>
+        <div class="text-white d-flex flex-column align-items-center mr-2">
+            <span><%= current_user.followeds.size %></span>
+            <span class="font-weight-bold">Following</span>
+        </div>
+    </div>
+    <nav class="w-100 mt-4">
+        <ul class="nav flex-column">
+            <li class="nav-item d-flex w-25 justify-content-between align-items-center">
+                <img class="nav-icon" src="https://img.icons8.com/android/24/ffffff/home.png"/>
+                <%=  link_to 'Home', '#',class: 'nav-link text-white' %>
+            </li>
+            <li class="nav-item d-flex w-25 justify-content-between align-items-center">
+                <img class="nav-icon" src="https://img.icons8.com/material/24/ffffff/user-male-circle--v1.png"/>
+                <%=  link_to 'Profile', '#',class: 'nav-link text-white' %>
+            </li>
+                <li class="nav-item d-flex w-25 justify-content-between align-items-center">
+                <img class="nav-icon" src="https://img.icons8.com/material/24/ffffff/statistics--v1.png"/>
+                <%=  link_to 'Statistics', '#',class: 'nav-link text-white' %>
+            </li>
+        </ul>
+    <nav>
+</aside>

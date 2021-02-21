@@ -1,7 +1,9 @@
-<h1>Sign Up</h1>
+<h1 class="text-center">Sign Up</h1>
+<div class="sign-in-up-form mx-auto">
+    <%= render 'form', user: @user %>
+<div>
 
-<%= render 'form', user: @user %>
 
-<%= link_to 'Sign in', sign_in_path %>
+Already a user? <%= link_to 'Sign in', sign_in_path %>
 
 
