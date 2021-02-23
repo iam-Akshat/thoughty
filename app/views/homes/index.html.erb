@@ -8,6 +8,9 @@
     <% end %>
   </div>
 </div>
-<div class="col-3 h-100 bg-danger">
-B
+<div class="col-3 h-100">
+<h3>Who to follow</h3>
+<% @user.latest_non_followeds.each do |u| %>
+<%= render partial: 'users/short_user',locals: {user: u}%>
+<% end %>
 </div>

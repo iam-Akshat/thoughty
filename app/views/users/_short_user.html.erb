@@ -1,0 +1,9 @@
+<div class="w-100 container clearfix  d-flex align-items-center mt-2">
+<div class="float-left mr-2 h-100">
+    <%= image_tag "https://via.placeholder.com/40/000000/FFFFFF/?text=#{user.username}",class:'rounded-circle' %>
+</div>
+    <div>
+        <h6><%= user.full_name %></h6>
+        <%= link_to '@'+user.username, user_path(user) %>
+    </div>
+</div>
