@@ -15,10 +15,14 @@ class User < ApplicationRecord
     has_many :followeds,through: :followeds_following,source: :followed
 
     def user_and_followers_tweets
-        thoughties.includes(:author).where(author:followers.to_a << self).most_recent.limit(10)
+        Thoughty.includes(:author).where(author:followers.to_a << self).most_recent.limit(10)
     end
 
     def latest_non_followeds
         User.where.not(id: followeds.to_a.push(self)).order(created_at: :desc).take(4)
+    end
+
+    def follows_me?
+        
     end
 end

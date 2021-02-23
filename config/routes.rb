@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get 'sign_out' => 'sessions#destroy'
   get 'sign_up' => 'users#new'
   get 'home' => 'homes#index'
+  post 'follow' => 'followings#create'
+  post 'unfollow' => 'followings#destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

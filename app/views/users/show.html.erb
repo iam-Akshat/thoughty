@@ -30,4 +30,11 @@
       </div>
     </div>
     </div>
+    <div class="cta">
+      <% if following_user?(@user) %>
+        <%= render partial: 'followings/unfollow',locals: {user: @user} %>
+      <% else %>
+        <%= render partial: 'followings/follow',locals: {user: @user} %>
+      <% end %>
+    </div>
 </div>
