@@ -19,9 +19,6 @@ class User < ApplicationRecord
     end
 
     def latest_non_followeds
-        puts '################################'
-        a = followeds.to_a
-        puts a.inspect
         User.where.not(id: followeds.to_a.push(self)).order(created_at: :desc).take(4)
     end
 end
