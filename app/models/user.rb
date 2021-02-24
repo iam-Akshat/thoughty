@@ -17,7 +17,7 @@ class User < ApplicationRecord
     has_one_attached :profile_pic
     has_one_attached :cover_pic
     def user_and_followers_tweets
-        Thoughty.includes(:author).where(author:followers.to_a << self).most_recent.limit(10)
+        Thoughty.includes(:author).where(author:followeds.to_a << self).most_recent.limit(10)
     end
 
     def latest_non_followeds
@@ -25,7 +25,7 @@ class User < ApplicationRecord
     end
 
     def follows_me?(diff_user)
-        f = Following.where(followed: self, follower: diff_user)
-        !f.nil?
+        f = Following.where(followed: self, follower: diff_user).take
+        f.nil? != true 
     end
 end
