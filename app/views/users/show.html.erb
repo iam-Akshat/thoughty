@@ -37,4 +37,7 @@
         <%= render partial: 'followings/follow',locals: {user: @user} %>
       <% end %>
     </div>
+    <% if current_user.follows_me?(@user) %>
+      <%== '<p>Follows you</p>' %>
+    <% end %>
 </div>

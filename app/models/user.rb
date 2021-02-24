@@ -22,7 +22,8 @@ class User < ApplicationRecord
         User.where.not(id: followeds.to_a.push(self)).order(created_at: :desc).take(4)
     end
 
-    def follows_me?
-        
+    def follows_me?(diff_user)
+        f = Following.where(followed: self, follower: diff_user)
+        !f.nil?
     end
 end
