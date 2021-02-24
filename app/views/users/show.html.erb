@@ -1,7 +1,7 @@
 
 <div class="col-9 bg-light w-100">
  <div class="cover-img-holder">
-    <%= image_tag "https://via.placeholder.com/600x200/000000/FFFFFF/?text=#{@user.username}",class:'w-100' %>
+    <%= image_tag  @user.cover_pic.variant( :gravity=>"Center", resize: "600x200^", crop: '600x200+0+0' ) ,class:'w-100' %>
  </div>
   <div class="tweets-holder mt-3 p-2">
     <% @user.thoughties.most_recent.limit(10).each do |t|%>
@@ -12,7 +12,7 @@
 <div class="col-3 h-100">
     <div class="user-about">
       <div class="d-flex w-75 justify-content-between align-items-center">
-        <%= image_tag 'https://via.placeholder.com/60/000000/FFFFFF/?text=Thoughty', class:'rounded-circle' %>
+        <%= image_tag @user.profile_pic, class:'rounded-circle',style: 'width:60px;height:60px' %>
         <p class="font-weight-bold"><%= @user.full_name  %></p>
       </div>
     <div class="mini-stats d-flex w-100 justify-content-between mt-4 ">

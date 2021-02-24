@@ -14,6 +14,8 @@ class User < ApplicationRecord
     has_many :followeds_following, class_name: 'Following',foreign_key: 'follower_id'
     has_many :followeds,through: :followeds_following,source: :followed
 
+    has_one_attached :profile_pic
+    has_one_attached :cover_pic
     def user_and_followers_tweets
         Thoughty.includes(:author).where(author:followers.to_a << self).most_recent.limit(10)
     end
