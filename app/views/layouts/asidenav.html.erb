@@ -17,11 +17,11 @@
         <ul class="nav flex-column">
             <li class="nav-item d-flex w-25 justify-content-between align-items-center">
                 <img class="nav-icon" src="https://img.icons8.com/android/24/ffffff/home.png"/>
-                <%=  link_to 'Home', '#',class: 'nav-link text-white' %>
+                <%=  link_to 'Home', root_path,class: 'nav-link text-white' %>
             </li>
             <li class="nav-item d-flex w-25 justify-content-between align-items-center">
                 <img class="nav-icon" src="https://img.icons8.com/material/24/ffffff/user-male-circle--v1.png"/>
-                <%=  link_to 'Profile', '#',class: 'nav-link text-white' %>
+                <%=  link_to 'Profile', user_path(current_user),class: 'nav-link text-white' %>
             </li>
                 <li class="nav-item d-flex w-25 justify-content-between align-items-center">
                 <img class="nav-icon" src="https://img.icons8.com/material/24/ffffff/statistics--v1.png"/>
