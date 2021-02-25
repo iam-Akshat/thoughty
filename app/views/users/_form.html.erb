@@ -18,7 +18,14 @@
     <%= form.label :full_name %>
     <%= form.text_field :full_name, required: true ,maxlength: 35, class: 'form-control' %>
   </div>
-
+  <div class="custom-file">
+    <%= form.label :profile_pic, class:'custom-file-label' %>
+    <%= form.file_field :profile_pic,required: true, class: 'custom-file-input',accept:'image/*' %>
+  </div>
+ <div class="custom-file mt-4 mb-4">
+    <%= form.label :cover_pic, class:'custom-file-label' %>
+    <%= form.file_field :cover_pic,required: true, class: 'custom-file-input',accept:'image/*' %>
+  </div>
   <br>
 
   <div class="actions">

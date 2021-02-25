@@ -1,0 +1,16 @@
+<div class="col-9 bg-light w-100">
+  <div class="thought-form rounded shadow p-3 mt-3">
+   <%= render partial: 'thoughties/form' %>
+  </div>
+  <div class="tweets-holder mt-3 p-2">
+    <%@user.user_and_followers_tweets.each do |t|%>
+      <%= render partial: 'thoughties/thought',locals: {thought: t} %>
+    <% end %>
+  </div>
+</div>
+<div class="col-3 h-100">
+<h3>Who to follow</h3>
+<% @user.latest_non_followeds.each do |u| %>
+<%= render partial: 'users/short_user',locals: {user: u}%>
+<% end %>
+</div>

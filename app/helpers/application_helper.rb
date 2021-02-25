@@ -1,10 +1,10 @@
 module ApplicationHelper
   def flash_shower
-    unless flash[:error].nil? && flash[:notice].nil? && flash[:alert].nil? 
-      '<div class="flash">' \
-          "#{flash[:error] || flash[:notice] || flash[:alert]}" \
-      "</div>" 
-    end 
+    return if flash[:error].nil? && flash[:notice].nil? && flash[:alert].nil?
+
+    '<div class="flash">' \
+        "#{flash[:error] || flash[:notice] || flash[:alert]}" \
+    '</div>'
   end
 
   def signed_in?

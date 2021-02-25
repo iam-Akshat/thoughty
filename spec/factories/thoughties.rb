@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :thoughty do
-    content { "MyText" }
+    content { 'MyText' }
 
     author factory: :user
   end

@@ -1,14 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe "users/new", type: :view do
+RSpec.describe 'users/new', type: :view do
   before(:each) do
-    assign(:user, User.new())
+    assign(:user, create(:user))
   end
 
-  it "renders new user form" do
+  it 'renders new user form' do
+    puts :user
     render
-
-    assert_select "form[action=?][method=?]", users_path, "post" do
-    end
+    expect(rendered).to have_content('Sign Up')
   end
 end

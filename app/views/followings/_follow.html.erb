@@ -1,0 +1,4 @@
+<%= form_with(url:'/follow', html: { class: 'mt-2 mx-auto'}) do |f| %>
+    <%= hidden_field_tag 'user',user.id %>
+    <%= f.submit 'follow', class: 'btn btn-primary' %>
+<% end %>
