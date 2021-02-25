@@ -1,16 +1,16 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create]
-  skip_before_action :verify_authenticity_token,only: [:create]
+  skip_before_action :authenticate_user!, only: %i[new create]
+  skip_before_action :verify_authenticity_token, only: [:create]
   # GET /sessions/new
-  def new
-  end
+  def new; end
 
-
-  # POST /sessions 
+  # POST /sessions
   def create
     user = User.find_by(username: params[:Username])
     if user.nil?
-      flash[:error] = "User not found"
+      flash[:error] = 'User not found'
       render 'new'
     else
       session[:user_id] = user.id
@@ -23,5 +23,4 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to sign_in_path
   end
-
 end

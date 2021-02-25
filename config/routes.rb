@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   resources :users
   resources :sessions
-  resources :thoughties,only: [:create]
+  resources :thoughties, only: [:create]
   root to: 'homes#index'
   post 'login' => 'sessions#create'
   get 'sign_in' => 'sessions#new'
