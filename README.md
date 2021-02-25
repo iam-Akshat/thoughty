@@ -1,24 +1,63 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Thoughty
 
-Things you may want to cover:
+> A thoughts sharing website, like twitter.
 
-* Ruby version
+![screenshot](./app_screenshot.png)
 
-* System dependencies
+This is a twitter like website, in which you can share thoughts with ytour followers.
 
-* Configuration
+## Built With
 
-* Database creation
+- Ruby
+- Rails
+- Postgresql
 
-* Database initialization
+## Live Demo
 
-* How to run the test suite
+[Live Demo Link](https://thoughty-2.herokuapp.com/)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Getting Started
+- Clone the repo `git clone git@github.com:iam-Akshat/thoughty.git`
+- `cd thoughty`
+- `bundle install` to install all the dependencies
+- `rails db:create && rails db:migrate`
+- `rails s`
 
-* ...
+### Prerequisites
+- Ruby 2.7.2
+- Rails 6.1
+- Postgresql
+
+### Run tests
+- `rspec`
+
+### Deployment
+
+- To deploy you will need google cloud storage key
+
+## Authors
+
+👤 **Akshat**
+
+- GitHub: [@githubhandle](https://github.com/iam-Akshat)
+- Twitter: [@twitterhandle](https://twitter.com/akshatsethi)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/akshatsethi)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+
+
