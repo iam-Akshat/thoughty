@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    validates :username, :full_name,presence: true
+    validates :username, :full_name,:profile_pic,:cover_pic,presence: true
     validates :username, uniqueness: {message: 'Username already taken'}
     validates :username, length: { in: 4..10 }
 
