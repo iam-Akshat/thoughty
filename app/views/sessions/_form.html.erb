@@ -1,0 +1,10 @@
+<%= form_with url: '../login' do |form| %>
+  <div class="form-group">
+    <%= form.label 'Username' %>
+    <%= form.text_field 'Username',required:true, class: "form-control" %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit 'Login',class: 'btn btn-primary' %>
+  </div>
+<% end %>

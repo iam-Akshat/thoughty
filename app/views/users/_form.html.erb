@@ -1,0 +1,34 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.label :username %>
+    <%= form.text_field :username ,required: true, minlength: 4 ,maxlength: 10, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name, required: true ,maxlength: 35, class: 'form-control' %>
+  </div>
+  <div class="custom-file">
+    <%= form.label :profile_pic, class:'custom-file-label' %>
+    <%= form.file_field :profile_pic,required: true, class: 'custom-file-input',accept:'image/*' %>
+  </div>
+ <div class="custom-file mt-4 mb-4">
+    <%= form.label :cover_pic, class:'custom-file-label' %>
+    <%= form.file_field :cover_pic,required: true, class: 'custom-file-input',accept:'image/*' %>
+  </div>
+  <br>
+
+  <div class="actions">
+    <%= form.submit 'Sign up',class: 'btn btn-primary' %>
+  </div>
+<% end %>

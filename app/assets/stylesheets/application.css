@@ -10,6 +10,32 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require bootstrap
  *= require_tree .
  *= require_self
  */
+.sign-in-up-form {
+  max-width: 400px;
+}
+
+.asidenav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 20vw;
+}
+
+.nav-icon {
+  height: 24px;
+}
+
+main.container-fluid {
+  padding-left: 0;
+  max-width: 80% !important;
+  padding-right: 0;
+}
+
+.holder.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}

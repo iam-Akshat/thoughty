@@ -1,0 +1,43 @@
+
+<div class="col-9 bg-light w-100">
+ <div class="cover-img-holder">
+    <%= image_tag  @user.cover_pic.variant( :gravity=>"Center", resize: "600x200^", crop: '600x200+0+0' ) ,class:'w-100' %>
+ </div>
+  <div class="tweets-holder mt-3 p-2">
+    <% @user.thoughties.most_recent.limit(10).each do |t|%>
+      <%= render partial: 'thoughties/thought',locals: {thought: t} %>
+    <% end %>
+  </div>
+</div>
+<div class="col-3 h-100">
+    <div class="user-about">
+      <div class="d-flex w-75 justify-content-between align-items-center">
+        <%= image_tag @user.profile_pic, class:'rounded-circle',style: 'width:60px;height:60px' %>
+        <p class="font-weight-bold"><%= @user.full_name  %></p>
+      </div>
+    <div class="mini-stats d-flex w-100 justify-content-between mt-4 ">
+      <div class="d-flex flex-column align-items-center ">
+        <span><%= @user.thoughties.size %></span>
+        <span class="font-weight-normal">Thoughts</span>
+      </div>
+      <div class="d-flex flex-column align-items-center ">
+        <span><%= @user.followers.size %></span>
+        <span class="font-weight-normal">Followers</span>
+      </div>
+      <div class="d-flex flex-column align-items-center mr-2">
+        <span><%= @user.followeds.size %></span>
+        <span class="font-weight-normal">Following</span>
+      </div>
+    </div>
+    </div>
+    <div class="cta">
+      <% if following_user?(@user) %>
+        <%= render partial: 'followings/unfollow',locals: {user: @user} %>
+      <% else %>
+        <%= render partial: 'followings/follow',locals: {user: @user} %>
+      <% end %>
+    </div>
+    <% if current_user.follows_me?(@user) ==  true %>
+      <%== '<p>Follows you</p>' %>
+    <% end %>
+</div>
