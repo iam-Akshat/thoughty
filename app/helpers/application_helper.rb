@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module ApplicationHelper
   def flash_shower
     unless flash[:error].nil? && flash[:notice].nil? && flash[:alert].nil?

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class FollowingsController < ApplicationController
   def create
     Following.create!(follower: helpers.current_user, followed_id: params['user'])

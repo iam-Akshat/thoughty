@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Thoughty < ApplicationRecord
   validates :content, presence: true
   validates :content, length: { maximum: 50 }

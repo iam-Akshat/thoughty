@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module UsersHelper
   def following_user?(diff_user)
     f = Following.find_by(follower: current_user, followed: diff_user)

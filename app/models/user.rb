@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
   validates :username, :full_name, :profile_pic, :cover_pic, presence: true
   validates :username, uniqueness: { message: 'Username already taken' }
