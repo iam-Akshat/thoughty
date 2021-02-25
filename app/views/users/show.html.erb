@@ -30,14 +30,16 @@
       </div>
     </div>
     </div>
-    <div class="cta">
-      <% if following_user?(@user) %>
-        <%= render partial: 'followings/unfollow',locals: {user: @user} %>
-      <% else %>
-        <%= render partial: 'followings/follow',locals: {user: @user} %>
+    <% unless current_user.id == @user.id %>
+      <div class="cta">
+        <% if following_user?(@user) %>
+          <%= render partial: 'followings/unfollow',locals: {user: @user} %>
+        <% else %>
+          <%= render partial: 'followings/follow',locals: {user: @user} %>
+        <% end %>
+      </div>
+      <% if current_user.follows_me?(@user) ==  true %>
+        <%== '<p>Follows you</p>' %>
       <% end %>
-    </div>
-    <% if current_user.follows_me?(@user) ==  true %>
-      <%== '<p>Follows you</p>' %>
     <% end %>
 </div>
