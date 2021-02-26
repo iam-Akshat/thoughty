@@ -1,14 +1,28 @@
 require 'rails_helper'
 
-RSpec.describe 'users/show', type: :system do
-  context "user is logged in" do
-    let (:user) do 
-        create(:user)
+RSpec.describe 'sessions', type: :system do
+  context 'when user is logged in' do
+    before(:each) do
+      visit root_path
+      user = create(:user)
+      fill_in 'Username', with: user.username
+      click_on 'Login'
     end
     it 'renders root page when logged in' do
-        session[:user_id] = user.id
-        visit root_path
-        expect(page).to have_path('/')
+      expect(current_path).to eq root_path
     end
-end
+
+    it 'redirects to sign_in page on logging out' do
+      click_on 'Sign out'
+      using_wait_time 2 do
+        expect(current_path).to eq sign_in_path
+      end
+    end
+  end
+  context 'when user not logged in' do
+    it 'root_path redirects to sign_in_path' do
+      visit root_path
+      expect(current_path).to eq sign_in_path
+    end
+  end
 end
