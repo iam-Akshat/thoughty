@@ -19,12 +19,12 @@
     <%= form.text_field :full_name, required: true ,maxlength: 35, class: 'form-control' %>
   </div>
   <div class="custom-file">
+    <%= form.file_field :profile_pic,required: true, class: 'custom-file-input',accept:'image/*', id:'fi1' %>
     <%= form.label :profile_pic, class:'custom-file-label' %>
-    <%= form.file_field :profile_pic,required: true, class: 'custom-file-input',accept:'image/*' %>
   </div>
  <div class="custom-file mt-4 mb-4">
+    <%= form.file_field :cover_pic,required: true, class: 'custom-file-input',accept:'image/*', id:'fi2' %>
     <%= form.label :cover_pic, class:'custom-file-label' %>
-    <%= form.file_field :cover_pic,required: true, class: 'custom-file-input',accept:'image/*' %>
   </div>
   <br>
 
@@ -32,3 +32,12 @@
     <%= form.submit 'Sign up',class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+<script>
+  const upload_boxes = document.querySelectorAll('.custom-file-input')
+  upload_boxes.forEach(box => {
+    box.addEventListener('change',(e)=>{
+      document.querySelector(`#${e.target.id} ~ .custom-file-label`).innerText = e.target.value
+    })
+  });
+</script>
